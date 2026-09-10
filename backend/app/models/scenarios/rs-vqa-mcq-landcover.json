@@ -1,0 +1,41 @@
+{
+  "scenario_id": "rs-vqa-mcq-landcover",
+  "task": "mcq-vqa",
+  "task_type": "rs-vqa-mcq",
+  "task_aliases": ["rs-vqa-mcq", "mcq-vqa", "vqa-mcq"],
+  "input_requirement": {
+    "fixture_id": "fixture_a_optical",
+    "fixture_aliases": ["sample_optical_2023", "fixture_a", "fixture_optical_a", "optical_2023", "fixture_a_optical", "sample_optical_2023.tif"],
+    "modality": "optical",
+    "image_count": 1,
+    "temporal": false
+  },
+  "supported_intent": "dominant land-cover class identification",
+  "intent_keywords": ["dominant", "which class", "what class", "main class", "majority class", "dominant land cover"],
+  "query_patterns": [
+    "\\b(dominant|primary|main|majority)\\b.*\\b(class|type|land cover|category)\\b",
+    "\\b(what|which)\\b.*\\b(class|type|land cover)\\b"
+  ],
+  "example_queries": [
+    "What is the dominant land cover class in this scene?",
+    "Which land cover class dominates here?",
+    "What is the primary land cover category?"
+  ],
+  "query": "What is the dominant land cover class in this scene?",
+  "answer": "Arable land and permanently irrigated land",
+  "choices": [
+    "Arable land and permanently irrigated land",
+    "Continuous urban fabric",
+    "Broad-leaved forest",
+    "Water bodies"
+  ],
+  "evidence": [],
+  "grounding_supported": false,
+  "counting_result": null,
+  "model_confidence": 0.81,
+  "evidence_consistency": 0.68,
+  "provenance": "demo-scenario",
+  "encoder": "demo-encoder",
+  "model_mode": "demo",
+  "training_status": "demo"
+}

@@ -1,0 +1,37 @@
+{
+  "scenario_id": "captioning-landcover",
+  "task": "captioning",
+  "task_type": "captioning",
+  "task_aliases": ["captioning", "scene-description"],
+  "input_requirement": {
+    "fixture_id": "fixture_a_optical",
+    "fixture_file": "sample_optical_2023.tif",
+    "fixture_aliases": ["sample_optical_2023", "fixture_a", "fixture_optical_a", "optical_2023", "fixture_a_optical", "sample_optical_2023.tif"],
+    "accepts_any_optical": true,
+    "modality": "optical",
+    "image_count": 1,
+    "temporal": false
+  },
+  "supported_intent": "scene description and characterization",
+  "intent_keywords": ["describe", "caption", "overview", "summarize", "scene description", "tell me about", "characterize", "land cover"],
+  "query_patterns": [
+    "\\b(describe|caption|overview|summarize|tell me about)\\b.*\\b(scene|image|land cover|landscape)?\\b"
+  ],
+  "example_queries": [
+    "Describe the land cover in this satellite image.",
+    "Describe the land cover in this satellite scene",
+    "Describe this satellite image",
+    "Give an overview of this satellite scene"
+  ],
+  "query": "Describe the land cover in this satellite scene",
+  "answer": "The scene predominantly shows agricultural land including arable fields and mixed cropland, with secondary coverage of semi-natural areas along the scene margins. No significant urban fabric or water bodies are visible within the scene extent.",
+  "evidence": [],
+  "grounding_supported": false,
+  "counting_result": null,
+  "model_confidence": 0.72,
+  "evidence_consistency": 0.65,
+  "provenance": "demo-scenario",
+  "encoder": "demo-encoder",
+  "model_mode": "demo",
+  "training_status": "demo"
+}

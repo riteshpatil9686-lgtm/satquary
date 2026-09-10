@@ -1,0 +1,45 @@
+{
+  "scenario_id": "change-vqa-urban-expansion",
+  "task": "change-vqa",
+  "task_type": "change-vqa",
+  "task_aliases": ["change-vqa", "change_vqa"],
+  "input_requirement": {
+    "fixture_id": "fixture_b_temporal_pair",
+    "fixture_aliases_t1": ["sample_optical_2023", "fixture_b_2023", "temporal_2023", "2023", "t1", "sample_optical_2023.tif"],
+    "fixture_aliases_t2": ["sample_optical_2024", "fixture_b_2024", "temporal_2024", "2024", "t2", "sample_optical_2024.tif"],
+    "modality": "optical",
+    "image_count": 2,
+    "temporal": true
+  },
+  "supported_intent": "temporal change and urban expansion detection",
+  "intent_keywords": ["change", "expansion", "expanded", "urban", "built-up", "between", "two dates", "dates", "2023", "2024"],
+  "query_patterns": [
+    "\\b(change|expansion|expanded|grow|grew)\\b.*\\b(urban|built-up|dates|between)?\\b",
+    "\\b(urban expansion|built-up area)\\b"
+  ],
+  "example_queries": [
+    "Has urban built-up area expanded between the two dates?",
+    "Has urban expansion occurred between the two dates?",
+    "Did the city expand between 2023 and 2024?"
+  ],
+  "query": "Has urban built-up area expanded between the two dates?",
+  "answer": "Yes, built-up area shows expansion in the northeastern sector of the scene between 2023 and 2024. The change is consistent with new construction activity along the periphery.",
+  "evidence": [
+    {
+      "id": "ev-chg-01",
+      "type": "bounding_box",
+      "provenance": "demo-scenario",
+      "coordinates": [120, 80, 310, 270],
+      "label": "Detected expansion zone (demo scenario)",
+      "roi_confidence": null
+    }
+  ],
+  "grounding_supported": true,
+  "counting_result": null,
+  "model_confidence": 0.82,
+  "evidence_consistency": 0.78,
+  "provenance": "demo-scenario",
+  "encoder": "demo-encoder",
+  "model_mode": "demo",
+  "training_status": "demo"
+}

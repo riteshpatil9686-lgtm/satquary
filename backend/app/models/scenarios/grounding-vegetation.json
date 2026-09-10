@@ -1,0 +1,43 @@
+{
+  "scenario_id": "grounding-vegetation",
+  "task": "grounding",
+  "task_type": "grounding",
+  "task_aliases": ["grounding", "spatial-grounding"],
+  "input_requirement": {
+    "fixture_id": "fixture_c_grounding",
+    "fixture_aliases": ["sample_grounding", "fixture_c", "fixture_grounding", "grounding", "sample_grounding.tif", "fixture_c_grounding.tif"],
+    "modality": "optical",
+    "image_count": 1,
+    "temporal": false
+  },
+  "supported_intent": "spatial grounding of vegetation region",
+  "intent_keywords": ["locate", "find", "identify", "vegetation", "highlight", "where", "bounding box", "bbox"],
+  "query_patterns": [
+    "\\b(locate|find|identify|highlight|where|detect)\\b.*\\b(vegetation|greenery|forest|trees|vegetation area)\\b"
+  ],
+  "example_queries": [
+    "Locate the vegetation area in this scene",
+    "Find the vegetation region in this satellite image",
+    "Where is the vegetation located?"
+  ],
+  "query": "Locate the vegetation area in this scene",
+  "answer": "A significant vegetation region was identified in the western portion of the scene, consistent with the spectral signature of agricultural or natural vegetation.",
+  "evidence": [
+    {
+      "id": "ev-gnd-01",
+      "type": "bounding_box",
+      "provenance": "demo-scenario",
+      "coordinates": [40, 180, 200, 380],
+      "label": "Vegetation region (demo scenario)",
+      "roi_confidence": null
+    }
+  ],
+  "grounding_supported": true,
+  "counting_result": null,
+  "model_confidence": 0.79,
+  "evidence_consistency": 0.81,
+  "provenance": "demo-scenario",
+  "encoder": "demo-encoder",
+  "model_mode": "demo",
+  "training_status": "demo"
+}

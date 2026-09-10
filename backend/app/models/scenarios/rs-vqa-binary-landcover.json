@@ -1,0 +1,41 @@
+{
+  "scenario_id": "rs-vqa-binary-landcover",
+  "task": "binary-vqa",
+  "task_type": "rs-vqa-binary",
+  "task_aliases": ["rs-vqa-binary", "binary-vqa", "vqa-binary"],
+  "input_requirement": {
+    "fixture_id": "fixture_a_optical",
+    "fixture_file": "sample_optical_2023.tif",
+    "fixture_aliases": ["sample_optical_2023", "fixture_a", "fixture_optical_a", "optical_2023", "fixture_a_optical", "sample_optical_2023.tif"],
+    "accepts_any_optical": false,
+    "modality": "optical",
+    "image_count": 1,
+    "temporal": false
+  },
+  "supported_intent": "primary land-cover classification",
+  "intent_keywords": ["agricultural", "agriculture", "arable", "cropland", "crop", "farming"],
+  "query_patterns": [
+    "\\b(agricultural|agriculture|arable|cropland|crop|crops|farming)\\b.*\\b(primary|main|dominant|dominate|dominates|majority|cover|scene|here)?\\b",
+    "\\b(mainly|mostly|primarily|predominantly)\\b.*\\b(agricultural|agriculture|crops?|farming)\\b",
+    "\\b(dominate|dominates|dominant)\\b.*\\b(agricultural|agriculture|crops?)\\b",
+    "\\b(is|are|does)\\b.*\\b(agricultural|agriculture|crop|cropland|arable)\\b"
+  ],
+  "example_queries": [
+    "Is agricultural land the primary land cover in this scene?",
+    "Is this scene mainly agricultural?",
+    "Does agriculture dominate this scene?",
+    "Is agriculture the main land cover here?",
+    "Is cropland present in this scene?"
+  ],
+  "query": "Is agricultural land the primary land cover in this scene?",
+  "answer": "Yes, agricultural land (arable land and mixed cropland patterns) constitutes the primary land cover, covering approximately 67% of the scene area.",
+  "evidence": [],
+  "grounding_supported": false,
+  "counting_result": null,
+  "model_confidence": 0.76,
+  "evidence_consistency": 0.70,
+  "provenance": "demo-scenario",
+  "encoder": "demo-encoder",
+  "model_mode": "demo",
+  "training_status": "demo"
+}
